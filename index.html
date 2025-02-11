@@ -7,6 +7,30 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id ="gameContainer">
+        <h1>Tic Tac Toe</h1>
+        <div class = "gameBoard" id="gameBoard">
+            <div cellIndex = "0" class="grid"></div>
+            <div cellIndex = "1" class="grid"></div>
+            <div cellIndex = "2" class="grid"></div>
+            <div cellIndex = "3" class="grid"></div>
+            <div cellIndex = "4" class="grid"></div>
+            <div cellIndex = "5" class="grid"></div>
+            <div cellIndex = "6" class="grid"></div>
+            <div cellIndex = "7" class="grid"></div>
+            <div cellIndex = "8" class="grid"></div>
+        </div>
+        <p>Please enter player names and start the game</p>
+        <div class="players">
+            <input type="text" id = "player1" placeholder = "Player 1 name">
+            <input type="text" id = "player2" placeholder = "Player 2 name"> 
+         </div>
+        <h2 id = "winText"></h2>
+        <div class = "gameButtons">
+            <button class = "restartButton">Restart</button>
+            <button class = "startButton">Start</button>
+        </div>
+    </div>
     
     <script src="script.js"></script>
 </body>
