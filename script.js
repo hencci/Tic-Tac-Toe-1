@@ -15,4 +15,6 @@ const Gameboard = (() => {
             board[index] = mark;
         }
     };
+
+    return { getBoard, setMark, resetBoard };
 })();
