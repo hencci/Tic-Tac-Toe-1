@@ -37,4 +37,8 @@ const Game = (() => {
         winner = null;
         gameOver = false;
     };
+
+    const switchPlayer = () => {
+        currentPlayer = currentPlayer === player1 ? player2 : player1;
+    };
 })();
