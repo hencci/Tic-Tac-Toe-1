@@ -41,4 +41,8 @@ const Game = (() => {
     const switchPlayer = () => {
         currentPlayer = currentPlayer === player1 ? player2 : player1;
     };
+
+    const checkWinner = () => {
+        const board = Gameboard.getBoard();
+    };
 })();
