@@ -24,3 +24,11 @@ const Gameboard = (() => {
 const Player = (name, mark) => {
     return { name, mark };
 };
+
+// Game Module (Handles the core logic of the game)
+const Game = (() => {
+    let currentPlayer;
+    let winner = null;
+    let gameOver = false;
+
+})();
