@@ -17,4 +17,10 @@ const Gameboard = (() => {
     };
 
     return { getBoard, setMark, resetBoard };
+
 })();
+
+// Player Factory (Represents each player)
+const Player = (name, mark) => {
+    return { name, mark };
+};
