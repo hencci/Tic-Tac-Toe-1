@@ -63,5 +63,10 @@ const Game = (() => {
                 return;
             }
         }
+
+        if (!board.includes("")) {  // If there's no empty spot left, it's a tie
+            winner = "Tie";
+            gameOver = true;
+        }
     };
 })();
