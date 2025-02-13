@@ -54,5 +54,14 @@ const Game = (() => {
             [0, 4, 8],
             [2, 4, 6]
         ];
+
+        for (let pattern of winPatterns) {
+            const [a, b, c] = pattern;
+            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
+                winner = currentPlayer;
+                gameOver = true;
+                return;
+            }
+        }
     };
 })();
