@@ -31,4 +31,10 @@ const Game = (() => {
     let winner = null;
     let gameOver = false;
 
+    const startGame = (player1, player2) => {
+        Gameboard.resetBoard();
+        currentPlayer = player1;  // Player 1 starts the game
+        winner = null;
+        gameOver = false;
+    };
 })();
