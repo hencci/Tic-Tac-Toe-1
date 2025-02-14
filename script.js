@@ -82,5 +82,6 @@ const Game = (() => {
 
     const renderBoard = () => {
         const board = Gameboard.getBoard();
+        const gridElements = document.querySelectorAll('.grid');
     };
 })();
