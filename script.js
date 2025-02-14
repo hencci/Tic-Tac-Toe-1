@@ -79,4 +79,8 @@ const Game = (() => {
             switchPlayer();  // Switch the turn
         }
     };
+
+    const renderBoard = () => {
+
+    };
 })();
