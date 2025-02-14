@@ -71,6 +71,6 @@ const Game = (() => {
     };
 
     const makeMove = (index) => {
-
+        if (gameOver) return;
     };
 })();
