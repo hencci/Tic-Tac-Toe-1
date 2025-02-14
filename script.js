@@ -81,6 +81,6 @@ const Game = (() => {
     };
 
     const renderBoard = () => {
-
+        const board = Gameboard.getBoard();
     };
 })();
