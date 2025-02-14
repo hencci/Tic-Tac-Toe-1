@@ -72,5 +72,7 @@ const Game = (() => {
 
     const makeMove = (index) => {
         if (gameOver) return;
+
+        Gameboard.setMark(index, currentPlayer.mark); // Mark the board
     };
 })();
