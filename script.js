@@ -69,4 +69,8 @@ const Game = (() => {
             gameOver = true;
         }
     };
+
+    const makeMove = (index) => {
+
+    };
 })();
