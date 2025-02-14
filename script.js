@@ -74,5 +74,6 @@ const Game = (() => {
         if (gameOver) return;
 
         Gameboard.setMark(index, currentPlayer.mark); // Mark the board
+        checkWinner();  // Check if the game has a winner
     };
 })();
