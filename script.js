@@ -3,17 +3,18 @@ const Gameboard = (() => {
     const board = ["", "", "", "", "", "", "", "", ""];  // An array representing the grid
 
     const resetBoard = () => {
-        for (let i = 0; i < board.length; i++) {
-            board[i] = "";  // Reset every spot on the board
-        }
+        board.fill("", 0, board.length); // Reset the board to an empty state
     };
 
-    const getBoard = () => board;
+    const getBoard = () => board; // Returns the current state of the board
 
+    // Sets a mark (X or O) on the board at the given index if it's empty
     const setMark = (index, mark) => {
         if (board[index] === "") {  // Ensure the spot is empty
             board[index] = mark;
+            return true;
         }
+        return false;
     };
 
     return { getBoard, setMark, resetBoard };
@@ -27,21 +28,26 @@ const Player = (name, mark) => {
 
 // Game Module (Handles the core logic of the game)
 const Game = (() => {
-    let currentPlayer;
+    let currentPlayer, player1, player2;
     let winner = null;
     let gameOver = false;
 
-    const startGame = (player1, player2) => {
-        Gameboard.resetBoard();
+    const startGame = () => {
+        const name1 = document.getElementById("player1").value || "Player 1";
+        const name2 = document.getElementById("player2").value || "Player 2";
+        player1 = Player(name1, "X");
+        player2 = Player(name2, "O");
         currentPlayer = player1;  // Player 1 starts the game
         winner = null;
         gameOver = false;
+        Gameboard.resetBoard();
     };
 
     const switchPlayer = () => {
         currentPlayer = currentPlayer === player1 ? player2 : player1;
     };
 
+    // Checks if there is a winner or if the game is a tie
     const checkWinner = () => {
         const board = Gameboard.getBoard();
         const winPatterns = [
@@ -73,11 +79,12 @@ const Game = (() => {
     const makeMove = (index) => {
         if (gameOver) return;
 
-        Gameboard.setMark(index, currentPlayer.mark); // Mark the board
-        checkWinner();  // Check if the game has a winner
-        if (!gameOver) {
-            switchPlayer();  // Switch the turn
-        }
+        if (Gameboard.setMark(index, currentPlayer.mark)) {
+            checkWinner();  // Check if the game has a winner
+            if (!gameOver) {
+                switchPlayer();  // Switch the turn
+            }
+        };
     };
 
     const renderBoard = () => {
