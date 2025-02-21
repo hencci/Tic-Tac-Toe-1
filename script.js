@@ -110,4 +110,10 @@ const Game = (() => {
         const index = event.target.getAttribute("cellIndex");
         makeMove(index);
     };
+
+    // Attach event listeners to Start and Restart buttons
+    document.querySelector(".startButton").addEventListener("click", startGame);
+    document.querySelector(".restartButton").addEventListener("click", startGame);
+
+    return { startGame, makeMove, renderBoard };
 })();
