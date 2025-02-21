@@ -41,6 +41,7 @@ const Game = (() => {
         winner = null;
         gameOver = false;
         Gameboard.resetBoard();
+        renderBoard();
     };
 
     const switchPlayer = () => {
@@ -80,6 +81,7 @@ const Game = (() => {
         if (gameOver) return;
 
         if (Gameboard.setMark(index, currentPlayer.mark)) {
+            renderBoard(); // Update the board UI
             checkWinner();  // Check if the game has a winner
             if (!gameOver) {
                 switchPlayer();  // Switch the turn
