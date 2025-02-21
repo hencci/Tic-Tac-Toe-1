@@ -93,6 +93,10 @@ const Game = (() => {
         const gridElements = document.querySelectorAll('.grid');
         gridElements.forEach((cell, index) => {
             cell.textContent = board[index]; // Update cell with mark
+            cell.removeEventListener("click", cellClick);
+            if (!gameOver) {
+                cell.addEventListener("click", cellClick); // Add click listener
+            }
         });
     };
 
