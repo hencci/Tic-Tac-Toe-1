@@ -95,4 +95,10 @@ const Game = (() => {
             cell.textContent = board[index]; // Update cell with mark
         });
     };
+
+    // Handles click event on a grid cell
+    const cellClick = (event) => {
+        const index = event.target.getAttribute("cellIndex");
+        makeMove(index);
+    };
 })();
