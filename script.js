@@ -33,8 +33,15 @@ const Game = (() => {
     let gameOver = false;
 
     const startGame = () => {
-        const name1 = document.getElementById("player1").value || "Player 1";
-        const name2 = document.getElementById("player2").value || "Player 2";
+        const name1 = document.getElementById("player1").value.trim();
+        const name2 = document.getElementById("player2").value.trim();
+
+        // Ensure both player names are provided before starting
+        if (!name1 || !name2) {
+            alert("Both players must enter their names to start the game.");
+            return;
+        }
+        
         player1 = Player(name1, "X");
         player2 = Player(name2, "O");
         currentPlayer = player1;  // Player 1 starts the game
