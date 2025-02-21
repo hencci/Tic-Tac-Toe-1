@@ -87,8 +87,12 @@ const Game = (() => {
         };
     };
 
+    // Renders the board UI with updated marks and event listeners
     const renderBoard = () => {
         const board = Gameboard.getBoard();
         const gridElements = document.querySelectorAll('.grid');
+        gridElements.forEach((cell, index) => {
+            cell.textContent = board[index]; // Update cell with mark
+        });
     };
 })();
