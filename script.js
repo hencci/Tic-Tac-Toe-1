@@ -42,6 +42,7 @@ const Game = (() => {
         gameOver = false;
         Gameboard.resetBoard();
         renderBoard();
+        document.getElementById("winText").textContent = "";
     };
 
     const switchPlayer = () => {
@@ -67,6 +68,7 @@ const Game = (() => {
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 winner = currentPlayer;
                 gameOver = true;
+                document.getElementById("winText").textContent = `${winner.name} Wins!`;
                 return;
             }
         }
@@ -74,6 +76,7 @@ const Game = (() => {
         if (!board.includes("")) {  // If there's no empty spot left, it's a tie
             winner = "Tie";
             gameOver = true;
+            document.getElementById("winText").textContent = "It's a Tie!";
         }
     };
 
