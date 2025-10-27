@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: darkgrey;
+}
+
+.grid {
+    width: 100px;
+    height: 100px;
+    border: 1px solid;
+    box-shadow: 0 0 0 1px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.gameBoard {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+#gameContainer {
+    text-align: center;
+    font-family: cursive;
+}
+
+input {
+    padding: 0.2rem 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 7px;
+}
